@@ -1,0 +1,44 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.94.128:8848
+    gateway:
+      routes:
+        - id: item-service # 路由规则id，自定义，唯一
+          uri: lb://item-service # 路由的目标服务，lb代表负载均衡，会从注册中心拉取服务列表
+          predicates: # 路由断言，判断当前请求是否符合当前规则，符合则路由到目标服务
+            - Path=/items/**,/search/** # 这里是以请求路径作为判断规则
+        - id: cart-service
+          uri: lb://cart-service
+          predicates:
+            - Path=/carts/**
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**,/addresses/**
+        - id: trade-service
+          uri: lb://trade-service
+          predicates:
+            - Path=/orders/**
+        - id: pay-service
+          uri: lb://pay-service
+          predicates:
+            - Path=/pay-orders/**
+      default-filters:
+        - AddRequestHeader=truth, anyone long-press like button will be rich # 逗号之前是请求头的key，逗号之后是value
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi

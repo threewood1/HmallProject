@@ -1,0 +1,29 @@
+server:
+  port: 8082
+feign:
+  okhttp:
+    enabled: true # 开启OKHttp连接池支持
+  sentinel:
+    enabled: true # 开启Feign的sentinel整合
+hm:
+  swagger:
+    title: 购物车服务接口文档
+    package: com.hmall.cart.controller
+  db:
+    database: hm-cart
+  cart:
+    maxSize: 10
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090  #控制台地址
+      http-method-specify: true  #开启请求方式前缀
+      datasource:
+        ds2: # 配置文件的数据源名称
+          nacos:
+            server-addr: 192.168.94.128:8848
+            data-id: degrade.json
+            group-id: DEFAULT_GROUP
+            data-type: json
+            rule-type: degrade

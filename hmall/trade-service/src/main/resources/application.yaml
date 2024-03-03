@@ -1,0 +1,15 @@
+server:
+  port: 8085
+hm:
+  swagger:
+    title: 交易管理接口文档
+    package: com.hmall.trade.controller
+  db:
+    database: hm-trade
+spring:
+  rabbitmq:
+    host: 192.168.94.128
+    port: 5672
+    virtual-host: /hmall
+    username: hmall
+    password: 123

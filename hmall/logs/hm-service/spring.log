@@ -1,0 +1,638 @@
+18:30:07:757  INFO 11532 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 17 on threewood1 with PID 11532 (D:\SpringCloud微服务资料2023\微服务01\资料\hmall\hm-service\target\classes started by xiongsenlab in D:\SpringCloud微服务资料2023\微服务01\资料\hmall)
+18:30:07:760 DEBUG 11532 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+18:30:07:760  INFO 11532 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+18:30:08:960  INFO 11532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+18:30:08:962  INFO 11532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+18:30:08:996  INFO 11532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+18:30:09:669  INFO 11532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+18:30:09:679  INFO 11532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+18:30:09:679  INFO 11532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+18:30:09:804  INFO 11532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+18:30:09:805  INFO 11532 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1993 ms
+18:30:11:283  INFO 11532 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+18:30:11:788  INFO 11532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+18:30:11:789  INFO 11532 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+18:30:11:792  INFO 11532 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+18:30:11:839  INFO 11532 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+18:30:12:065  INFO 11532 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 4.758 seconds (JVM running for 5.818)
+18:30:37:725  INFO 11532 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:30:37:725  INFO 11532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+18:30:37:726  INFO 11532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+18:30:37:753 ERROR 11532 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.hmall.common.exception.UnauthorizedException: 未登录] with root cause
+
+com.hmall.common.exception.UnauthorizedException: 未登录
+	at com.hmall.utils.JwtTool.parseToken(JwtTool.java:47) ~[classes/:na]
+	at com.hmall.interceptor.LoginInterceptor.preHandle(LoginInterceptor.java:21) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+18:34:13:524 ERROR 11532 --- [http-nio-8080-exec-7] c.h.common.advice.CommonExceptionAdvice  : 自定义异常 -> com.hmall.common.exception.UnauthorizedException , 异常原因：无效的token  
+18:34:13:526 DEBUG 11532 --- [http-nio-8080-exec-7] c.h.common.advice.CommonExceptionAdvice  : 
+
+com.hmall.common.exception.UnauthorizedException: 无效的token
+	at com.hmall.utils.JwtTool.parseToken(JwtTool.java:54) ~[classes/:na]
+	at com.hmall.interceptor.LoginInterceptor.preHandle(LoginInterceptor.java:21) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: cn.hutool.jwt.JWTException: The token was expected 3 parts, but got 1.
+	at cn.hutool.jwt.JWT.splitToken(JWT.java:404) ~[hutool-all-5.8.11.jar:na]
+	at cn.hutool.jwt.JWT.parse(JWT.java:96) ~[hutool-all-5.8.11.jar:na]
+	at cn.hutool.jwt.JWT.<init>(JWT.java:85) ~[hutool-all-5.8.11.jar:na]
+	at cn.hutool.jwt.JWT.of(JWT.java:66) ~[hutool-all-5.8.11.jar:na]
+	at com.hmall.utils.JwtTool.parseToken(JwtTool.java:52) ~[classes/:na]
+	... 42 common frames omitted
+
+18:34:24:985 ERROR 11532 --- [http-nio-8080-exec-8] c.h.common.advice.CommonExceptionAdvice  : 其他异常 uri : /users/login -> 
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression 'ew.sqlSegment != null and ew.sqlSegment != '' and ew.nonEmptyOfWhere'. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [java.lang.ExceptionInInitializerError]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at jdk.proxy2/jdk.proxy2.$Proxy87.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy99.selectOne(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.one(ChainQuery.java:48) ~[mybatis-plus-extension-3.4.3.jar:3.4.3]
+	at com.hmall.service.impl.UserServiceImpl.login(UserServiceImpl.java:46) ~[classes/:na]
+	at com.hmall.service.impl.UserServiceImpl$$FastClassBySpringCGLIB$$84609514.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.27.jar:5.3.27]
+	at com.hmall.service.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$59546e62.login(<generated>) ~[classes/:na]
+	at com.hmall.controller.UserController.login(UserController.java:25) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.apache.ibatis.builder.BuilderException: Error evaluating expression 'ew.sqlSegment != null and ew.sqlSegment != '' and ew.nonEmptyOfWhere'. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [java.lang.ExceptionInInitializerError]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:48) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.TrimSqlNode.apply(TrimSqlNode.java:55) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:35) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:305) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:69) ~[mybatis-plus-extension-3.4.3.jar:3.4.3]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) ~[mybatis-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy131.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 65 common frames omitted
+Caused by: org.apache.ibatis.ognl.OgnlException: sqlSegment
+	at org.apache.ibatis.ognl.OgnlRuntime.getMethodValue(OgnlRuntime.java:2165) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ObjectPropertyAccessor.getPossibleProperty(ObjectPropertyAccessor.java:66) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ObjectPropertyAccessor.getProperty(ObjectPropertyAccessor.java:160) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:3373) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:121) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTChain.getValueBody(ASTChain.java:141) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:586) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:550) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46) ~[mybatis-3.5.7.jar:3.5.7]
+	... 92 common frames omitted
+Caused by: java.lang.ExceptionInInitializerError: null
+	at com.baomidou.mybatisplus.core.toolkit.LambdaUtils.extract(LambdaUtils.java:55) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.getColumnCache(AbstractLambdaWrapper.java:75) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:62) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:58) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:38) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractWrapper.lambda$columnToSqlSegment$a3f115af$1(AbstractWrapper.java:575) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at com.baomidou.mybatisplus.core.conditions.segments.NormalSegmentList.childrenSqlSegment(NormalSegmentList.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.segments.AbstractISegmentList.getSqlSegment(AbstractISegmentList.java:103) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.segments.MergeSegments.getSqlSegment(MergeSegments.java:72) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractWrapper.getSqlSegment(AbstractWrapper.java:525) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.ibatis.ognl.OgnlRuntime.invokeMethodInsideSandbox(OgnlRuntime.java:1266) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.invokeMethod(OgnlRuntime.java:1251) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.getMethodValue(OgnlRuntime.java:2163) ~[mybatis-3.5.7.jar:3.5.7]
+	... 110 common frames omitted
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @3023df74
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354) ~[na:na]
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297) ~[na:na]
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178) ~[na:na]
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:172) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.SetAccessibleAction.run(SetAccessibleAction.java:18) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.SetAccessibleAction.run(SetAccessibleAction.java:9) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.ReflectionKit.setAccessible(ReflectionKit.java:203) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.support.SerializedLambdaMeta.<clinit>(SerializedLambdaMeta.java:19) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	... 134 common frames omitted
+
+18:35:27:713  INFO 1084 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 11.0.19 on threewood1 with PID 1084 (D:\SpringCloud微服务资料2023\微服务01\资料\hmall\hm-service\target\classes started by xiongsenlab in D:\SpringCloud微服务资料2023\微服务01\资料\hmall)
+18:35:27:715 DEBUG 1084 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+18:35:27:716  INFO 1084 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+18:35:28:361  INFO 1084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+18:35:28:363  INFO 1084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+18:35:28:386  INFO 1084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+18:35:28:842  INFO 1084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+18:35:28:853  INFO 1084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+18:35:28:853  INFO 1084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+18:35:29:021  INFO 1084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+18:35:29:021  INFO 1084 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1275 ms
+18:35:30:539  INFO 1084 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+18:35:30:902  INFO 1084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+18:35:30:903  INFO 1084 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+18:35:30:906  INFO 1084 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+18:35:30:934  INFO 1084 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+18:35:31:100  INFO 1084 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 3.721 seconds (JVM running for 4.857)
+18:35:40:513  INFO 1084 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:35:40:514  INFO 1084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+18:35:40:515  INFO 1084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+18:35:40:643  INFO 1084 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+18:35:48:923  INFO 1084 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+18:35:48:930 DEBUG 1084 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:48:947 DEBUG 1084 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:000 DEBUG 1084 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:005 DEBUG 1084 --- [http-nio-8080-exec-9] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:005 DEBUG 1084 --- [http-nio-8080-exec-9] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:008 DEBUG 1084 --- [http-nio-8080-exec-9] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:008 DEBUG 1084 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:008 DEBUG 1084 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:010 DEBUG 1084 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:010 DEBUG 1084 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:011 DEBUG 1084 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:012 DEBUG 1084 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:013 DEBUG 1084 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:013 DEBUG 1084 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:015 DEBUG 1084 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:016 DEBUG 1084 --- [http-nio-8080-exec-4] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:017 DEBUG 1084 --- [http-nio-8080-exec-4] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:019 DEBUG 1084 --- [http-nio-8080-exec-4] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:019 DEBUG 1084 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:020 DEBUG 1084 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:021 DEBUG 1084 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:022 DEBUG 1084 --- [http-nio-8080-exec-10] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:023 DEBUG 1084 --- [http-nio-8080-exec-10] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:025 DEBUG 1084 --- [http-nio-8080-exec-10] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:026 DEBUG 1084 --- [http-nio-8080-exec-6] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:026 DEBUG 1084 --- [http-nio-8080-exec-6] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:028 DEBUG 1084 --- [http-nio-8080-exec-6] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:49:029 DEBUG 1084 --- [http-nio-8080-exec-3] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:49:029 DEBUG 1084 --- [http-nio-8080-exec-3] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:49:033 DEBUG 1084 --- [http-nio-8080-exec-3] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:55:041 DEBUG 1084 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+18:35:55:042 DEBUG 1084 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+18:35:55:043 DEBUG 1084 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+18:35:55:254 DEBUG 1084 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:35:55:255 DEBUG 1084 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:35:55:259 DEBUG 1084 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:36:48:376 DEBUG 1084 --- [http-nio-8080-exec-8] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:36:48:376 DEBUG 1084 --- [http-nio-8080-exec-8] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:36:48:379 DEBUG 1084 --- [http-nio-8080-exec-8] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:36:49:640 DEBUG 1084 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:36:49:643 DEBUG 1084 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:36:49:652 DEBUG 1084 --- [http-nio-8080-exec-1] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:36:51:507 DEBUG 1084 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:36:51:507 DEBUG 1084 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:36:51:510 DEBUG 1084 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:36:52:061 DEBUG 1084 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:36:52:068 DEBUG 1084 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:36:52:081 DEBUG 1084 --- [http-nio-8080-exec-6] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:36:52:882 DEBUG 1084 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:36:52:883 DEBUG 1084 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:36:52:888 DEBUG 1084 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:36:55:575 DEBUG 1084 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+18:36:55:576 DEBUG 1084 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+18:36:55:577 DEBUG 1084 --- [http-nio-8080-exec-3] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+18:37:03:443  INFO 1084 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+18:37:03:506  INFO 1084 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+19:06:36:718  INFO 9196 --- [main] com.hmall.HMallApplication               : Starting HMallApplication using Java 11.0.19 on threewood1 with PID 9196 (D:\SpringCloud微服务资料2023\微服务01\资料\hmall\hm-service\target\classes started by xiongsenlab in D:\SpringCloud微服务资料2023\微服务01\资料\hmall)
+19:06:36:720 DEBUG 9196 --- [main] com.hmall.HMallApplication               : Running with Spring Boot v2.7.12, Spring v5.3.27
+19:06:36:721  INFO 9196 --- [main] com.hmall.HMallApplication               : The following 1 profile is active: "local"
+19:06:37:457  INFO 9196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+19:06:37:459  INFO 9196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+19:06:37:487  INFO 9196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+19:06:37:951  INFO 9196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+19:06:37:960  INFO 9196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+19:06:37:960  INFO 9196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+19:06:38:086  INFO 9196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+19:06:38:086  INFO 9196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1333 ms
+19:06:39:789  INFO 9196 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+19:06:40:153  INFO 9196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+19:06:40:154  INFO 9196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+19:06:40:156  INFO 9196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+19:06:40:190  INFO 9196 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+19:06:40:454  INFO 9196 --- [main] com.hmall.HMallApplication               : Started HMallApplication in 4.103 seconds (JVM running for 5.071)
+19:06:53:463  INFO 9196 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:06:53:464  INFO 9196 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+19:06:53:466  INFO 9196 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+19:06:53:609  INFO 9196 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+19:07:01:821  INFO 9196 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+19:07:01:827 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:842 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:859 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:863 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:863 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:866 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:867 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:867 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:869 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:869 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:869 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:871 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:871 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:871 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:873 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:873 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:874 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:876 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:877 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:877 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:878 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:879 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:879 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:881 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:882 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:882 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:883 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:01:884 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : ==>  Preparing: SELECT id,username,password,phone,create_time,update_time,status,balance FROM user WHERE (username = ?)
+19:07:01:885 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : ==> Parameters: jack(String)
+19:07:01:886 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.UserMapper.selectOne    : <==      Total: 1
+19:07:02:257 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+19:07:02:259 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+19:07:02:263 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+19:13:43:027 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+19:13:43:028 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+19:13:43:029 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+19:13:52:407 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+19:13:52:408 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+19:13:52:411 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+19:13:53:514 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+19:13:53:515 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+19:13:53:516 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+19:13:54:344 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+19:13:54:344 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : ==> Parameters: 1(Long)
+19:13:54:345 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.CartMapper.selectList   : <==      Total: 0
+19:14:12:167 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:14:12:168 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:14:12:205 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:14:12:212 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:14:12:213 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:14:12:509 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:14:17:953 DEBUG 9196 --- [http-nio-8080-exec-1] c.hmall.mapper.AddressMapper.selectList  : ==>  Preparing: SELECT id,user_id,province,city,town,mobile,street,contact,is_default,notes FROM address WHERE (user_id = ?)
+19:14:17:953 DEBUG 9196 --- [http-nio-8080-exec-1] c.hmall.mapper.AddressMapper.selectList  : ==> Parameters: 1(Long)
+19:14:17:957 DEBUG 9196 --- [http-nio-8080-exec-1] c.hmall.mapper.AddressMapper.selectList  : <==      Total: 4
+19:14:29:601 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:14:29:602 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 1(Integer)
+19:14:29:698 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:14:29:699 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:14:29:699 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 1(Integer), 20(Long)
+19:14:29:793 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:15:10:051 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ?)
+19:15:10:051 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer)
+19:15:10:139 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:10:141 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:15:10:142 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 20(Long)
+19:15:10:241 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 5
+19:15:11:747 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?)
+19:15:11:747 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 10000(Integer), 29900(Integer)
+19:15:11:824 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:11:827 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?) ORDER BY update_time DESC LIMIT ?
+19:15:11:827 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 10000(Integer), 29900(Integer), 20(Long)
+19:15:11:925 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 1
+19:15:12:832 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?)
+19:15:12:832 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 30000(Integer), 59900(Integer)
+19:15:12:906 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:12:907 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?) ORDER BY update_time DESC LIMIT ?
+19:15:12:907 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 30000(Integer), 59900(Integer), 20(Long)
+19:15:13:007 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 1
+19:15:13:501 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?)
+19:15:13:501 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 60000(Integer), 89900(Integer)
+19:15:13:577 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:13:578 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?) ORDER BY update_time DESC LIMIT ?
+19:15:13:578 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 60000(Integer), 89900(Integer), 20(Long)
+19:15:13:675 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 1
+19:15:14:229 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?)
+19:15:14:230 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 90000(Integer), 159900(Integer)
+19:15:14:304 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:15:024 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?)
+19:15:15:024 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 160000(Integer), 999999(Integer)
+19:15:15:097 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:15:099 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?) ORDER BY update_time DESC LIMIT ?
+19:15:15:099 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 160000(Integer), 999999(Integer), 20(Long)
+19:15:15:200 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 1
+19:15:15:851 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?)
+19:15:15:851 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 0(Integer), 10000(Integer)
+19:15:15:925 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:15:926 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ? AND price BETWEEN ? AND ?) ORDER BY update_time DESC LIMIT ?
+19:15:15:926 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 0(Integer), 10000(Integer), 20(Long)
+19:15:16:023 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 1
+19:15:18:832 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND category = ? AND status = ?)
+19:15:18:832 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer)
+19:15:18:905 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:18:906 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND category = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:15:18:906 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 曲面电视(String), 1(Integer), 20(Long)
+19:15:19:005 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 5
+19:15:48:882 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:15:48:883 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 小米(String), 1(Integer)
+19:15:48:968 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:48:969 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:15:48:970 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 小米(String), 1(Integer), 20(Long)
+19:15:49:071 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:15:49:569 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:15:49:570 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:15:49:583 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:49:583 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:15:49:584 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:15:49:688 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:15:51:316 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:15:51:317 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 意尔康(String), 1(Integer)
+19:15:51:391 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:15:51:392 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:15:51:392 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 意尔康(String), 1(Integer), 20(Long)
+19:15:51:491 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:39:137 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:16:39:137 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:16:39:153 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:39:154 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:39:154 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:16:39:265 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:42:588 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:16:42:588 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 新秀丽(String), 1(Integer)
+19:16:42:657 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:42:658 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:42:658 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 新秀丽(String), 1(Integer), 20(Long)
+19:16:42:754 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:46:709 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:16:46:710 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:16:46:724 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:46:724 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:46:725 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:16:46:833 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:48:016 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:16:48:016 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 锤子(String), 1(Integer)
+19:16:48:088 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:48:089 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:48:089 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 锤子(String), 1(Integer), 20(Long)
+19:16:48:184 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:50:056 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:16:50:056 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:16:50:070 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:50:070 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:50:071 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:16:50:173 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:51:333 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:16:51:333 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: Apple(String), 1(Integer)
+19:16:51:399 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:51:400 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:51:401 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: Apple(String), 1(Integer), 20(Long)
+19:16:51:495 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:16:59:905 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:16:59:905 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:16:59:917 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:16:59:918 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:16:59:918 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:00:024 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:01:634 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:01:634 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 莎米特(String), 1(Integer)
+19:17:01:706 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:01:707 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:01:707 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 莎米特(String), 1(Integer), 20(Long)
+19:17:01:801 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:06:774 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:06:774 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:06:787 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:06:787 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:06:788 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:06:889 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:09:449 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:09:450 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 尤妮佳(String), 1(Integer)
+19:17:09:520 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:09:521 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:09:521 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 尤妮佳(String), 1(Integer), 20(Long)
+19:17:09:615 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:11:408 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:11:409 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:11:421 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:11:422 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:11:422 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:11:526 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:13:317 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:13:317 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 华为(String), 1(Integer)
+19:17:13:385 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:13:386 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:13:386 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 华为(String), 1(Integer), 20(Long)
+19:17:13:481 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:20:625 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:20:625 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:20:637 DEBUG 9196 --- [http-nio-8080-exec-9] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:20:638 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:20:638 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:20:739 DEBUG 9196 --- [http-nio-8080-exec-9] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:22:321 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:22:322 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 希捷(String), 1(Integer)
+19:17:22:394 DEBUG 9196 --- [http-nio-8080-exec-2] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:22:395 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:22:395 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 希捷(String), 1(Integer), 20(Long)
+19:17:22:493 DEBUG 9196 --- [http-nio-8080-exec-2] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:26:480 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:26:480 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:26:492 DEBUG 9196 --- [http-nio-8080-exec-4] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:26:492 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:26:493 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:26:593 DEBUG 9196 --- [http-nio-8080-exec-4] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:28:359 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:28:359 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 新秀丽(String), 1(Integer)
+19:17:28:426 DEBUG 9196 --- [http-nio-8080-exec-5] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:28:427 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:28:427 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 新秀丽(String), 1(Integer), 20(Long)
+19:17:28:520 DEBUG 9196 --- [http-nio-8080-exec-5] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:29:871 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:29:872 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:29:885 DEBUG 9196 --- [http-nio-8080-exec-3] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:29:886 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:29:886 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:29:988 DEBUG 9196 --- [http-nio-8080-exec-3] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:31:220 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:31:220 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 意尔康(String), 1(Integer)
+19:17:31:291 DEBUG 9196 --- [http-nio-8080-exec-1] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:31:292 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:31:292 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 意尔康(String), 1(Integer), 20(Long)
+19:17:31:389 DEBUG 9196 --- [http-nio-8080-exec-1] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:36:044 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:36:044 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:36:056 DEBUG 9196 --- [http-nio-8080-exec-7] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:36:056 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:36:057 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:36:156 DEBUG 9196 --- [http-nio-8080-exec-7] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:37:225 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:37:226 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: oppo(String), 1(Integer)
+19:17:37:301 DEBUG 9196 --- [http-nio-8080-exec-8] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:37:302 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:37:302 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: oppo(String), 1(Integer), 20(Long)
+19:17:37:399 DEBUG 9196 --- [http-nio-8080-exec-8] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:43:657 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (status = ?)
+19:17:43:657 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 1(Integer)
+19:17:43:671 DEBUG 9196 --- [http-nio-8080-exec-6] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:43:672 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:43:672 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 1(Integer), 20(Long)
+19:17:43:775 DEBUG 9196 --- [http-nio-8080-exec-6] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:17:44:684 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==>  Preparing: SELECT COUNT(*) FROM item WHERE (brand = ? AND status = ?)
+19:17:44:684 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : ==> Parameters: 意尔康(String), 1(Integer)
+19:17:44:757 DEBUG 9196 --- [http-nio-8080-exec-10] c.h.m.ItemMapper.selectPage_mpCount      : <==      Total: 1
+19:17:44:758 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==>  Preparing: SELECT id, name, price, stock, image, category, brand, spec, sold, comment_count, isAD, status, create_time, update_time, creater, updater FROM item WHERE (brand = ? AND status = ?) ORDER BY update_time DESC LIMIT ?
+19:17:44:758 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : ==> Parameters: 意尔康(String), 1(Integer), 20(Long)
+19:17:44:854 DEBUG 9196 --- [http-nio-8080-exec-10] com.hmall.mapper.ItemMapper.selectPage   : <==      Total: 20
+19:26:53:605  INFO 9196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+19:26:53:622  INFO 9196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
